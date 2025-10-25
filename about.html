@@ -91,15 +91,16 @@
 
     /* Hero Section */
     .hero {
-  position: relative;
-  height: 100vh;
-  background: url('Zubby2.jpg') center/cover no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-}
+      position: relative;
+      height: 150vh;
+      background: url('/20251024_161727.jpg') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      filter: brightness(50%);
 
+    }
 
     .hero::after {
       content: "";
@@ -108,7 +109,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(139, 0, 0, 0.5);
+      /* background: rgba(139, 0, 0, 0.5); */
     }
 
     .hero-content {
@@ -151,7 +152,6 @@
     .about-img {
       border-radius: 15px;
       box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-
     }
 
     /* Timeline */
@@ -222,6 +222,17 @@
       color: var(--brown);
     }
 
+    .header-social-links a {
+      color: brown;
+      font-size: 1.2rem;
+      margin-left: 12px;
+      transition: 0.3s;
+    }
+
+    .header-social-links a:hover {
+      color: #8b0000;
+    }
+
     /* Responsive */
     @media (max-width: 991px) {
       nav ul {
@@ -264,19 +275,33 @@
 <body>
 
   <!-- Header -->
-  <header class="d-flex align-items-center justify-content-between px-4">
-    <a href="index.html" class="logo">
-      <img src="Zubby3.jpg" alt="Logo">
-    </a>
-    <nav id="navmenu">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html" class="active">About</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-      <i class="mobile-nav-toggle bi bi-list"></i>
-    </nav>
+  <header id="header" class="header d-flex align-items-center light-background sticky-top">
+    <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
+        <img src="/Zubby3.jpg" alt="Logo">
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html" class="active"><i class="bi bi-house-door"></i> Home</a></li>
+          <li><a href="about.html"><i class="bi bi-person-circle"></i> About</a></li>
+          <li><a href="portfolio.html"><i class="bi bi-briefcase"></i> Portfolio</a></li>
+          <li><a href="testimonials.html"><i class="bi bi-chat-quote"></i> Testimonials</a></li>
+          <li><a href="blog.html"><i class="bi bi-journal-text"></i> Blog</a></li>
+          <li><a href="contact.html"><i class="bi bi-envelope"></i> Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle bi bi-list"></i>
+      </nav>
+
+      <div class="header-social-links">
+        <a href="#"><i class="bi bi-twitter-x"></i></a>
+        <a href="#"><i class="bi bi-facebook"></i></a>
+        <a href="#"><i class="bi bi-instagram"></i></a>
+        <a href="#"><i class="bi bi-linkedin"></i></a>
+      </div>
+
+    </div>
   </header>
 
   <!-- Hero -->
@@ -293,49 +318,39 @@
       <h2 data-aos="fade-up">Who Is Zubeda Hassan Sakuru?</h2>
       <div class="row align-items-center">
         <div class="col-lg-6 mb-4" data-aos="fade-right">
-          <img src="Zubby2.jpg" alt="Zubeda Sakuru" class="img-fluid about-img">
+          <img src="/Zubby5.jpg" alt="Zubeda Sakuru" class="img-fluid about-img">
         </div>
         <div class="col-lg-6" data-aos="fade-left">
           <p class="about-text">
-            <strong>Zubeda Hassan Sakuru</strong> is a visionary Tanzanian business leader and the dynamic
+            <strong>Zubeda Hassan Sakuru</strong> is a Tanzanian politician and public administrator, currently serving
+            as
             <span style="color: var(--dark-brown); font-weight: 600;">Chief Executive Officer of Simba Sports
-              Club</span>.
-            Her leadership blends innovation, inclusivity, and strong governance, making her one of East Africa’s most
-            admired female executives.
+              Club. </span>She served as a Member of Parliament for a special women's seat from 2015 to 2020,
+            representing
+            the CHADEMA party. During her tenure, she held the position of Shadow Deputy Minister for Community
+            Development, Gender, and Children, and later served as the Shadow Minister for Water and Irrigation
           </p>
           <p class="about-text">
-            She has redefined the way football management works by introducing digital strategies, youth empowerment
-            programs, and community outreach projects that strengthen both the club’s legacy and Tanzania’s sporting
-            culture.
+            In addition to her political career, Zubeda is an academic and researcher. She holds a Bachelor's degree in
+            Public Administration and a Master's in Human Resource Management from Mzumbe University in Tanzania. She
+            also earned a Master's in Public Policy from the University of Warwick in the United Kingdom. Her research
+            interests include public policy analysis, political sociology, governance, and cultural diversity
           </p>
           <p class="about-text">
-            Beyond sports, Zubeda advocates for <em>women’s leadership, talent development, and sustainable
-              transformation</em> — inspiring thousands across Africa.
+            Zubeda is also an advocate for youth leadership and development. She is a<em> Mandela Washington Fellow
+              (2022) </em>and a <em>Chevening Scholar (2021)</em>, both prestigious programs aimed at empowering young
+            leaders from Africa — inspiring thousands across Africa.
+            In 2023, she was appointed as the Acting Chief Executive Officer of Simba Sports Club, a prominent football
+            club in Tanzania. Her appointment was noted for bringing a blend of intellectual leadership and passion for
+            the sport
+            Born on July 16, 1986, Zubeda is currently 39 years old
           </p>
         </div>
       </div>
 
+
       <!-- Timeline -->
       <h2 data-aos="fade-up">Professional Experience</h2>
-      <div class="timeline mt-5" data-aos="fade-up">
-        <div class="timeline-item">
-          <h3>July, 2012 – July 2015</h3>
-          <h5>Parliament of the United Republic of Tanzania</h5>
-          <p>Former Chief of Staff to the Shadow Cabinet</p>
-        </div>
-        <div class="timeline-item">
-          <h3>November 2015 – November 2020</h3>
-          <h5>Parliament of the United Republic of Tanzania</h5>
-          <p>Former Member of Parliament, Former Shadow Minister Water and Irrigation, Gender and Development.</p>
-          <div class="timeline-item">
-            <h3>November 2024 - Now</h3>
-            <h5>Simba Sports Club Tanzania</h5>
-            <p>Named Acting CEO of Simba Sports Club, succeeding Francois Regis.
-            </p>
-          </div>
-        </div>
-      </div>
-      <!-- Timeline -->
       <div class="timeline mt-5" data-aos="fade-up">
         <div class="timeline-item">
           <h3>July, 2012 – July 2015</h3>
