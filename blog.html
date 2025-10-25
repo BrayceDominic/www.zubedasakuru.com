@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Blog — Zubeda Hassan Sakuru</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Bootstrap & Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --brown: brown;
+            --tan: tan;
+            --cream: #fffdfb;
+            --muted: #6b5a4a;
+        }
+
+        body {
+            font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+            background-color: var(--tan);
+            color: var(--brown);
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header */
+        .header {
+            background: var(--cream);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 10px 0;
+        }
+
+        .logo img {
+            height: 50px;
+            border-radius: 30px;
+        }
+
+        nav.navmenu {
+            position: relative;
+        }
+
+        .navmenu ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+            align-items: center;
+            margin: 0;
+            padding: 10px;
+        }
+
+        .navmenu a {
+            color: var(--brown);
+            border-left: 1px solid var(--brown);
+            border-right: 1px solid var(--brown);
+            text-decoration: none;
+            font-weight: 500;
+            border-radius: 10px;
+            padding: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .navmenu a:hover,
+        .navmenu .active {
+            color: white;
+            background-color: var(--brown);
+        }
+
+        .mobile-nav-toggle {
+            display: none;
+            font-size: 28px;
+            cursor: pointer;
+            color: var(--brown);
+        }
+
+        /* Blog Layout */
+        .container-blog {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 30px;
+        }
+
+        .hero {
+            background: linear-gradient(0deg, rgba(123, 63, 0, 0.06), rgba(123, 63, 0, 0.02));
+            padding: 40px;
+            border-radius: 12px;
+            margin: 30px 0;
+            text-align: center;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 25px;
+        }
+
+        .post-card {
+            background: var(--cream);
+            padding: 15px;
+            border-radius: 12px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+        }
+
+        .post-card .thumb {
+            height: 220px;
+            border-radius: 8px;
+            background-size: cover;
+            background-position: center;
+            margin-bottom: 12px;
+        }
+
+        .meta {
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+
+        .sidebar .widget {
+            background: var(--cream);
+            padding: 15px;
+            border-radius: 12px;
+            box-shadow: 0 10px 28px rgba(0, 0, 0, 0.06);
+            margin-bottom: 20px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            color: var(--muted);
+            background: var(--cream);
+            padding: 20px 0;
+        }
+
+        .header-social-links a {
+            color: var(--brown);
+            font-size: 1.2rem;
+            margin-left: 12px;
+            transition: 0.3s;
+        }
+
+        /* Responsive */
+        @media (max-width: 991px) {
+            .navmenu ul {
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                right: 15px;
+                background: var(--cream);
+                width: 220px;
+                padding: 15px;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+                display: none;
+            }
+
+            .navmenu.active ul {
+                display: flex;
+            }
+
+            .mobile-nav-toggle {
+                display: block;
+            }
+
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+            .post-card .thumb {
+                height: 180px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header d-flex align-items-center sticky-top">
+        <div class="container-fluid d-flex justify-content-between align-items-center">
+            <a href="index.html" class="logo d-flex align-items-center">
+                <img src="/Zubby3.jpg" alt="Logo">
+            </a>
+            <nav class="navmenu">
+                <ul>
+                    <li><a href="index.html" class="active"><i class="bi bi-house-door"></i> Home</a></li>
+                    <li><a href="about.html"><i class="bi bi-person-circle"></i> About</a></li>
+                    <li><a href="portfolio.html"><i class="bi bi-briefcase"></i> Portfolio</a></li>
+                    <li><a href="testimonials.html"><i class="bi bi-chat-quote"></i> Testimonials</a></li>
+                    <li><a href="blog.html"><i class="bi bi-journal-text"></i> Blog</a></li>
+                    <li><a href="contact.html"><i class="bi bi-envelope"></i> Contact</a></li>
+                </ul>
+                <i class="mobile-nav-toggle bi bi-list"></i>
+            </nav>
+            <div class="header-social-links">
+                <a href="#"><i class="bi bi-twitter-x"></i></a>
+                <a href="#"><i class="bi bi-facebook"></i></a>
+                <a href="#"><i class="bi bi-instagram"></i></a>
+                <a href="#"><i class="bi bi-linkedin"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <h1>Insights & Updates</h1>
+        <p style="color:var(--muted)">Thoughts, news, and reflections on leadership, sports management, and community
+            development.</p>
+    </section>
+
+    <!-- Blog Grid -->
+    <div class="container-blog">
+        <div class="grid">
+            <div>
+                <!-- Featured post -->
+                <article class="post-card">
+                    <div class="thumb" style="background-image:url('/IMG-20241225-WA0000.jpg')">
+                    </div>
+                    <div class="meta">Nov 12, 2024 • Leadership</div>
+                    <h2 style="margin:8px 0">Modernizing Sports Institutions — A Roadmap</h2>
+                    <p style="color:var(--muted)">How digital tools, governance, and strategic partnerships can
+                        transform football clubs into sustainable institutions.</p>
+                    <p style="margin-top:12px"><a href="#" class="readmore"
+                            style="background:var(--brown);color:var(--cream);padding:8px 12px;border-radius:8px;text-decoration:none">Read
+                            full article</a></p>
+                </article>
+
+                <!-- Post list -->
+                <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:12px">
+                    <div class="post-card">
+                        <div class="thumb" style="background-image:url('/IMG-20251018-WA0001.jpg')">
+                        </div>
+                        <div class="meta">Oct 01, 2024 • Community</div>
+                        <h3 style="margin:8px 0">Youth Programs with Lasting Impact</h3>
+                        <p style="color:var(--muted)">Examples of community-centered sports initiatives that scale.</p>
+                    </div>
+                    <div class="post-card">
+                        <div class="thumb" style="background-image:url('/Screenshot_20251024_161900_X.jpg')">
+                        </div>
+                        <div class="meta">Aug 20, 2024 • Policy</div>
+                        <h3 style="margin:8px 0">Policy & Accountability in Sports Governance</h3>
+                        <p style="color:var(--muted)">Reflections on policy, transparency, and stakeholder engagement.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <div class="widget">
+                    <h4 style="margin:0 0 8px">About the author</h4>
+                    <p style="color:var(--muted);margin:0">Zubeda Hassan Sakuru — leader, strategist, and advocate for
+                        sports transformation and women’s leadership.</p>
+                </div>
+                <div class="widget">
+                    <h4 style="margin:0 0 8px">Categories</h4>
+                    <div style="display:flex;flex-direction:column;gap:6px">
+                        <a href="#" style="text-decoration:none;color:var(--brown)">Leadership</a>
+                        <a href="#" style="text-decoration:none;color:var(--brown)">Sports</a>
+                        <a href="#" style="text-decoration:none;color:var(--brown)">Community</a>
+                    </div>
+                </div>
+                <div class="widget">
+                    <h4 style="margin:0 0 8px">Search</h4>
+                    <input style="width:100%;padding:8px;border-radius:8px;border:1px solid #e8e0d6"
+                        placeholder="Search articles..." />
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>© 2025 Zubeda Hassan Sakuru — Blog</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const navToggle = document.querySelector('.mobile-nav-toggle');
+        const navMenu = document.querySelector('.navmenu');
+        navToggle.addEventListener('click', () => navMenu.classList.toggle('active'));
+    </script>
+</body>
+
+</html>
