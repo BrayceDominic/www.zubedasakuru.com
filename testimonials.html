@@ -29,7 +29,7 @@
 
         body {
             font-family: "Gill Sans", "Gill Sans MT", Calibri, Segoe UI, Roboto, sans-serif;
-            background-color: var(--tan);
+            background-color: var(--white);
             color: var(--brown);
             margin: 0;
             padding: 0;
@@ -97,7 +97,7 @@
         /* HERO SECTION */
         #hero {
             text-align: center;
-            padding: 80px 20px 40px;
+            padding: 20px;
             background: var(--brown);
         }
 
@@ -114,68 +114,69 @@
         }
 
         /* TESTIMONIALS SECTION */
-        .carousel {
+        .testimonial-carousel {
+            max-width: 900px;
+            margin: 60px auto;
             position: relative;
             background: var(--white);
-            padding: 70px;
+            padding: 30px;
             border-radius: 15px;
-            max-width: 900px;
-            margin: 0 auto 60px;
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
+            text-align: center;
+
         }
 
-        .slide {
+        .testimonial-slide {
             display: none;
+            flex-direction: column;
             align-items: center;
             gap: 20px;
-            transition: all 0.6s ease;
-            margin-top: 10px;
+            transition: all 0.5s ease;
         }
 
-        .slide.active {
+        .testimonial-slide.active {
             display: flex;
         }
 
-        .portrait {
-            width: 90px;
-            height: 90px;
+        .testimonial-slide img {
+            width: 300px;
+            height: 300px;
             border-radius: 50%;
-            background-size: cover;
-            background-position: center;
+            object-fit: cover;
             box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
         }
 
-        .quote {
+        .testimonial-slide p {
             font-style: italic;
             color: var(--muted);
-            line-height: 1.7;
+            line-height: 1.6;
         }
 
-        .who {
+        .testimonial-slide h6 {
             font-weight: 700;
             color: var(--brown);
-            margin-top: 8px;
+            margin-top: 10px;
         }
 
-        .controls {
+        .testimonial-controls {
+            margin-top: 20px;
             display: flex;
             justify-content: center;
-            gap: 8px;
-            margin-top: 20px;
+            gap: 745px;
         }
 
-        .dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: #e7d9c3;
+        .testimonial-btn {
+            background: var(--brown);
+            color: var(--white);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
             cursor: pointer;
             transition: 0.3s;
         }
 
-        .dot.active {
-            background: var(--brown);
-            transform: scale(1.1);
+        .testimonial-btn:hover {
+            background: var(--tan);
         }
 
         /* FOOTER */
@@ -187,35 +188,14 @@
         }
 
         /* RESPONSIVE */
-        @media (max-width: 991px) {
-            .navmenu ul {
-                flex-direction: column;
-                position: absolute;
-                top: 60px;
-                right: 15px;
-                background: var(--white);
-                width: 220px;
-                padding: 15px;
-                border-radius: 10px;
-                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-                display: none;
+        @media (max-width: 768px) {
+            .testimonial-carousel {
+                padding: 40px 20px;
             }
 
-            .navmenu.active ul {
-                display: flex;
-            }
-
-            .mobile-nav-toggle {
-                display: block;
-            }
-
-            .slide {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .portrait {
-                margin-bottom: 15px;
+            .testimonial-slide img {
+                width: 80px;
+                height: 80px;
             }
         }
     </style>
@@ -232,10 +212,11 @@
 
             <nav class="navmenu">
                 <ul>
-                    <li><a href="index.html" class="active"><i class="bi bi-house-door"></i> Home</a></li>
+                    <li><a href="index.html"><i class="bi bi-house-door"></i> Home</a></li>
                     <li><a href="about.html"><i class="bi bi-person-circle"></i> About</a></li>
                     <li><a href="portfolio.html"><i class="bi bi-briefcase"></i> Portfolio</a></li>
-                    <li><a href="testimonials.html"><i class="bi bi-chat-quote"></i> Testimonials</a></li>
+                    <li><a href="testimonials.html" class="active"><i class="bi bi-chat-quote"></i> Testimonials</a>
+                    </li>
                     <li><a href="blog.html"><i class="bi bi-journal-text"></i> Blog</a></li>
                     <li><a href="contact.html"><i class="bi bi-envelope"></i> Contact</a></li>
                 </ul>
@@ -258,102 +239,71 @@
     </section>
 
     <!-- Testimonials Carousel -->
-    <section class="carousel" data-aos="fade-up">
-        <div class="slide active">
-            <div class="portrait" style="background-image:url('ana.jpg');">
-            </div>
-            <div>
-                <div class="quote">"Zubeda’s leadership transformed our approach — she brings clarity, courage, and
-                    empathy to
-                    every project."</div>
-                <div class="who">— Asha Mkapa, Community Leader</div>
-                <small class="text-muted">Partner — Community Health Initiative</small>
-            </div>
+    <section class="testimonial-carousel" data-aos="fade-up">
+
+        <div class="testimonial-slide">
+            <img src="/athuman.jpeg" alt="Mr. Yusuf Vadi">
+            <p>"This is the kind of partnership that TFF encourages ...if managed prudently, this 20 billion Tanzanian
+                Shillings
+                deal could pave the way for even larger sponsorships."- regarding Simba under Sakuru's leadership.</p>
+            <h6>Mr. Athuman Nyamlani <span style="font-weight: lighter;">First Vice President - Tanzania Football
+                    Federation (TFF)</span></h6>
         </div>
 
-        <div class="slide">
-            <div class="portrait" style="background-image:url('Brayce.jpg');">
-            </div>
-            <div>
-                <div class="quote">"A strategic thinker with an exceptional ability to mobilize teams and build lasting
-                    partnerships."</div>
-                <div class="who">— John Kamau, Sports Executive</div>
-                <small class="text-muted">Former Partner — League Development</small>
-            </div>
+        <div class="testimonial-slide active">
+            <img src="/TRA.jpg" alt="Gen. Yusuph Juma Mwenda">
+            <p>"Hakuna ubishi kuwa michezo inakusanya watu wengi... kupitia Klabu ya Simba tutakuwa tumeongeza idadi
+                kubwa ya walipa kodi" alisema hayo kwenye hafla ya pamoja na Klabu ya Simba chini ya uongozi wa Zubeda
+                Sakuru.</p>
+            <h6>Gen. Yusuph Juma Mwenda <span style="font-weight: lighter;">Tanzania Revenue Authority (TRA)
+                    Commissioner</span></h6>
         </div>
 
-        <div class="slide">
-            <div class="portrait" style="background-image:url('client.jpg');">
-            </div>
-            <div>
-                <div class="quote">"Her mentorship changed my career path — an inspiring leader who creates
-                    opportunities for
-                    women."</div>
-                <div class="who">— Mary A., Program Director</div>
-                <small class="text-muted">Mentorship Program</small>
-            </div>
+        <div class="testimonial-slide">
+            <img src="/Yusuf Vadi.jpg" alt="Mr. Yusuf Vadi">
+            <p>"This partnership will revolutionize football in Tanzania and reinforce Simba's ambition to become
+                Africa's number one club and we promise to make valuable products of the likes we made for AS ROMA in
+                Italy."</p>
+            <h6>Mr. Vadi Yusuf <span style="font-weight: lighter;">CEO Diadora South Africa</span></h6>
         </div>
 
-        <div class="slide">
-            <div class="portrait" style="background-image:url('IMG-20241225-WA0000.jpg');">
-            </div>
-            <div>
-                <div class="quote">"Her mentorship changed my career path — an inspiring leader who creates
-                    opportunities for
-                    women."</div>
-                <div class="who">— Mary A., Program Director</div>
-                <small class="text-muted">Mentorship Program</small>
-            </div>
+        <div class="testimonial-slide">
+            <img src="/mangungu.jpg" alt="Mr. Yusuf Vadi">
+            <p>He called on stakeholders to unite and support the club's leadership "As leaders, we are fully committed
+                to this path..."(in context of the jersey deal made possible under CEO Sakuru)</p>
+            <h6>Mr. Murtaza Mangungu <span style="font-weight: lighter;">Chairman SIMBA Sports Club</span></h6>
         </div>
 
-        <div class="slide">
-            <div class="portrait" style="background-image:url('20250527_121342.jpg');">
-            </div>
-            <div>
-                <div class="quote">"Her mentorship changed my career path — an inspiring leader who creates
-                    opportunities for
-                    women."</div>
-                <div class="who">— Mary A., Program Director</div>
-                <small class="text-muted">Mentorship Program</small>
-            </div>
+        <div class="testimonial-slide">
+            <img src="/Msigwa.jpg" alt="Testimonial 3">
+            <p>"The government applauds Simba SC's CAF CC 2024/25 historic campaign... reaffirms support for growth".
+                While
+                not directly naming Sakuru, it signals institutional recogntition of the club's leadership context.
+            </p>
+            <h6>Mr. Gerson Msigwa <span style="font-weight: lighter;">Permanent Secretary Government of Tanzania </span>
+            </h6>
         </div>
 
-        <div class="slide">
-            <div class="portrait" style="background-image:url('IMG-20250130-WA0005.jpg');">
-            </div>
-            <div>
-                <div class="quote">"Her mentorship changed my career path — an inspiring leader who creates
-                    opportunities for
-                    women."</div>
-                <div class="who">— Mary A., Program Director</div>
-                <small class="text-muted">Mentorship Program</small>
-            </div>
+        <div class="testimonial-controls">
+            <button class="testimonial-btn" id="prevBtn">
+                <i class="bi bi-chevron-left"></i>
+            </button>
+            <button class="testimonial-btn" id="nextBtn">
+                <i class="bi bi-chevron-right"></i>
+            </button>
         </div>
 
-        <div class="slide">
-            <div class="portrait" style="background-image:url('Brayce.jpg');">
-            </div>
-            <div>
-                <div class="quote">"Her mentorship changed my career path — an inspiring leader who creates
-                    opportunities for
-                    women."</div>
-                <div class="who">— Mary A., Program Director</div>
-                <small class="text-muted">Mentorship Program</small>
-            </div>
-        </div>
 
-        <div class="controls">
-            <div class="dot active" data-index="0"></div>
-            <div class="dot" data-index="1"></div>
-            <div class="dot" data-index="2"></div>
-            <div class="dot" data-index="3"></div>
-            <div class="dot" data-index="4"></div>
-            <div class="dot" data-index="5"></div>
-            <div class="dot" data-index="6"></div>
-        </div>
     </section>
 
-    <footer>© 2025 Zubeda Hassan Sakuru. All Rights Reserved.</footer>
+    <!-- Footer -->
+    <footer id="footer" class="footer light-background" style="bottom: 0;">
+        <div class="container">
+            <div class="copyright text-center">
+                <p>© 2025 <strong class="sitename">Zubeda Hassan Sakuru</strong> | All Rights Reserved</p>
+            </div>
+        </div>
+    </footer>
 
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -367,18 +317,29 @@
         navToggle.addEventListener('click', () => navMenu.classList.toggle('active'));
 
         // Testimonials Carousel
-        const slides = document.querySelectorAll('.slide');
-        const dots = document.querySelectorAll('.dot');
-        let index = 0;
-        function showSlide(i) {
-            slides.forEach((s, si) => s.classList.toggle('active', si === i));
-            dots.forEach((d, di) => d.classList.toggle('active', di === i));
-            index = i;
+        const slides = document.querySelectorAll('.testimonial-slide');
+        let currentSlide = 0;
+
+        const showSlide = (index) => {
+            slides.forEach((slide, i) => slide.classList.toggle('active', i === index));
         }
-        dots.forEach(d => d.addEventListener('click', () => showSlide(Number(d.getAttribute('data-index')))));
-        setInterval(() => showSlide((index + 1) % slides.length), 6000);
+
+        document.getElementById('prevBtn').addEventListener('click', () => {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(currentSlide);
+        });
+
+        document.getElementById('nextBtn').addEventListener('click', () => {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        });
+
+        // Auto slide every 6 seconds
+        setInterval(() => {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }, 6000);
     </script>
 </body>
-
 
 </html>
