@@ -115,76 +115,92 @@
       margin-bottom: 0;
     }
 
+    /* Animated Dividers */
+    .divider {
+      width: 80px;
+      height: 3px;
+      background: var(--brown);
+      margin: 10px auto 25px auto;
+      border-radius: 2px;
+      animation: slideIn 1s ease forwards;
+    }
+
+    @keyframes slideIn {
+      0% {
+        width: 0;
+        opacity: 0;
+      }
+
+      100% {
+        width: 80px;
+        opacity: 1;
+      }
+    }
+
     /* Contact Section */
     .contact-container {
-      max-width: 1000px;
+      max-width: 1200px;
       margin: 0 auto 100px auto;
       padding: 20px;
     }
 
     .contact-card {
       background: #fff;
-      padding: 40px;
+      padding: 30px 20px;
       border-radius: 15px;
       box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
-      transition: transform 0.3s ease;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .contact-card:hover {
       transform: translateY(-5px);
+      box-shadow: 0 25px 40px rgba(0, 0, 0, 0.1);
     }
 
-    .contact-card h3 {
-      color: var(--brown);
-      margin-bottom: 20px;
-    }
-
-    .form-control {
-      border-radius: 8px;
-      border: 1px solid #ccc;
-      margin-bottom: 20px;
-      padding: 12px;
-      transition: border 0.3s;
-    }
-
-    .form-control:focus {
-      border-color: var(--brown);
-      box-shadow: none;
-    }
-
-    .btn-submit {
-      background: var(--brown);
-      color: #fff;
-      padding: 12px 30px;
-      border: none;
-      border-radius: 25px;
-      font-weight: 500;
-      transition: background 0.3s;
-    }
-
-    .btn-submit:hover {
-      background: var(--light-brown);
-    }
-
-    /* Contact Info Column */
-    .contact-info h4 {
+    .contact-card h3,
+    .contact-card h4,
+    .contact-card h5 {
       color: var(--brown);
       margin-bottom: 15px;
     }
 
-    .contact-info p {
-      margin-bottom: 10px;
-      font-size: 1rem;
+    .contact-card p {
       color: #555;
     }
 
-    .contact-info a {
-      color: var(--brown);
+    .contact-card a.btn-submit {
+      background: var(--brown);
+      color: #fff;
+      padding: 12px 25px;
+      border-radius: 25px;
+      font-weight: 500;
+      display: inline-block;
+      margin-top: 10px;
+      transition: background 0.3s, transform 0.3s;
+    }
+
+    .contact-card a.btn-submit:hover {
+      background: var(--light-brown);
+      transform: translateY(-2px);
       text-decoration: none;
     }
 
-    .contact-info a:hover {
+    /* Social Cards */
+    .social-card i {
+      font-size: 2rem;
+      color: var(--brown);
+      transition: transform 0.3s, color 0.3s;
+    }
+
+    .social-card:hover i {
+      transform: scale(1.2);
       color: var(--light-brown);
+    }
+
+    .social-card h5 {
+      margin-top: 10px;
+      color: var(--brown);
+      font-weight: 600;
     }
 
     /* Footer */
@@ -223,11 +239,14 @@
       #hero h2 {
         font-size: 2rem;
       }
+    }
 
-      .contact-card {
-        padding: 30px 20px;
-        margin-bottom: 30px;
-      }
+    iframe {
+      border-radius: 15px;
+      border: 0;
+      width: 100%;
+      height: 300px;
+      margin-top: 25px;
     }
   </style>
 </head>
@@ -242,12 +261,12 @@
       </a>
       <nav class="navmenu">
         <ul>
-          <li><a href="index.html" class="active"><i class="bi bi-house-door"></i> Home</a></li>
+          <li><a href="index.html"><i class="bi bi-house-door"></i> Home</a></li>
           <li><a href="about.html"><i class="bi bi-person-circle"></i> About</a></li>
           <li><a href="portfolio.html"><i class="bi bi-briefcase"></i> Portfolio</a></li>
           <li><a href="testimonials.html"><i class="bi bi-chat-quote"></i> Testimonials</a></li>
           <li><a href="blog.html"><i class="bi bi-journal-text"></i> Blog</a></li>
-          <li><a href="contact.html"><i class="bi bi-envelope"></i> Contact</a></li>
+          <li><a href="contact.html" class="active"><i class="bi bi-envelope"></i> Contact</a></li>
         </ul>
         <i class="mobile-nav-toggle bi bi-list"></i>
       </nav>
@@ -263,46 +282,92 @@
   <!-- Hero -->
   <section id="hero">
     <h2 data-aos="fade-down">Get in Touch</h2>
-    <p data-aos="fade-up">I’d love to hear from you. Send a message or connect through my social channels.</p>
+    <div class="divider" data-aos="fade-down"></div>
+    <p data-aos="fade-up">I’d love to hear from you. Connect through my verified channels or reach the office directly.
+    </p>
   </section>
 
   <!-- Contact Section -->
   <section class="contact-container" data-aos="fade-up">
-    <div class="row g-5">
-      <!-- Form Column -->
-      <div class="col-lg-6" data-aos="fade-right">
-        <div class="contact-card">
-          <h3>Contact Me</h3>
-          <form>
-            <input type="text" class="form-control" placeholder="Your Name" required>
-            <input type="email" class="form-control" placeholder="Your Email" required>
-            <input type="text" class="form-control" placeholder="Subject" required>
-            <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
-            <button type="submit" class="btn-submit mt-3">Send Message</button>
-          </form>
-        </div>
-      </div>
 
-      <!-- Info Column -->
-      <div class="col-lg-6 contact-info" data-aos="fade-left">
-        <h4>Contact Information</h4>
-        <p><i class="bi bi-envelope-fill me-2"></i> <a href="mailto:zubeda@example.com">zubeda@example.com</a></p>
-        <p><i class="bi bi-telephone-fill me-2"></i> +255 123 456 789</p>
-        <p><i class="bi bi-geo-alt-fill me-2"></i> Dar es Salaam, Tanzania</p>
-        <h4 class="mt-4">Connect Socially</h4>
-        <p>
-          <a href="#"><i class="bi bi-twitter-x me-2"></i>Twitter</a><br>
-          <a href="#"><i class="bi bi-facebook me-2"></i>Facebook</a><br>
-          <a href="#"><i class="bi bi-instagram me-2"></i>Instagram</a><br>
-          <a href="#"><i class="bi bi-linkedin me-2"></i>LinkedIn</a>
-        </p>
+    <!-- Executive Contact Card -->
+    <div class="contact-card text-center" data-aos="fade-down">
+      <h3>Executive Office Contact</h3>
+      <div class="divider"></div>
+      <p>For official engagements, partnership inquiries, and professional communication.</p>
+      <p><i class="bi bi-envelope-fill me-2"></i><a href="mailto:executiveoffice@simbasc.co.tz"
+          style="color:var(--brown);text-decoration:none;">executiveoffice@simbasc.co.tz</a></p>
+      <p><i class="bi bi-telephone-fill me-2"></i>+255 736 000 111 (Executive Desk)</p>
+      <p><i class="bi bi-geo-alt-fill me-2"></i>Simba SC Headquarters, Msimbazi Centre, Kariakoo, Dar es Salaam</p>
+    </div>
+
+    <!-- Social Media Cards -->
+    <div class="row g-4 mt-4">
+      <div class="col-md-6 col-lg-3">
+        <a href="https://x.com/ZubbySakuru" target="_blank" class="text-decoration-none">
+          <div class="contact-card social-card text-center">
+            <i class="bi bi-twitter-x"></i>
+            <h5>Twitter (X)</h5>
+            <p>Official Updates</p>
+          </div>
+        </a>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <a href="https://www.instagram.com/auntzubby" target="_blank" class="text-decoration-none">
+          <div class="contact-card social-card text-center">
+            <i class="bi bi-instagram"></i>
+            <h5>Instagram</h5>
+            <p>Official Photos & Highlights</p>
+          </div>
+        </a>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <a href="https://www.facebook.com/profile.php?id=61573684672741#" target="_blank" class="text-decoration-none">
+          <div class="contact-card social-card text-center">
+            <i class="bi bi-facebook"></i>
+            <h5>Facebook</h5>
+            <p>Community Interaction & News</p>
+          </div>
+        </a>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <a href="https://www.linkedin.com/in/zubeda-sakuru-4b813110a" target="_blank" class="text-decoration-none">
+          <div class="contact-card social-card text-center">
+            <i class="bi bi-linkedin"></i>
+            <h5>LinkedIn</h5>
+            <p>Professional & Corporate Updates</p>
+          </div>
+        </a>
       </div>
     </div>
+
+    <!-- WhatsApp CTA -->
+    <div class="contact-card text-center mt-5" data-aos="fade-up">
+      <h4>WhatsApp Business</h4>
+      <div class="divider"></div>
+      <p>For quick inquiries and coordination</p>
+      <a href="https://wa.me/255736000111" target="_blank" class="btn-submit"><i class="bi bi-whatsapp me-2"></i>Chat on
+        WhatsApp</a>
+    </div>
+
+    <!-- Google Map Embed -->
+    <div class="contact-card mt-5" data-aos="fade-up">
+      <h4>Office Location</h4>
+      <div class="divider"></div>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.123456!2d39.265123!3d-6.816789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x185c4a2d2e12345%3A0x123456789abcdef!2sSimba%20SC%20Headquarters!5e0!3m2!1sen!2stz!4v1700000000000!5m2!1sen!2stz"
+        allowfullscreen="" loading="lazy"></iframe>
+    </div>
+
   </section>
 
   <!-- Footer -->
-  <footer class="footer" data-aos="fade-up">
-    <p>© 2025 Zubeda Hassan Sakuru. All Rights Reserved.</p>
+  <footer id="footer" class="footer light-background">
+    <div class="container">
+      <div class="copyright text-center">
+        <p>© 2025 <strong class="sitename">Zubeda Hassan Sakuru</strong> | All Rights Reserved</p>
+      </div>
+    </div>
   </footer>
 
   <!-- Scripts -->
@@ -316,6 +381,7 @@
     const navMenu = document.querySelector('.navmenu');
     navToggle.addEventListener('click', () => navMenu.classList.toggle('active'));
   </script>
+
 </body>
 
 </html>
