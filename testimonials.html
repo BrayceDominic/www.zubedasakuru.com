@@ -5,21 +5,14 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title>Testimonials - Zubeda Hassan Sakuru</title>
-    <meta name="description"
-        content="Testimonials from partners and leaders who worked with Zubeda Hassan Sakuru, CEO of Simba Sports Club.">
+    <meta name="description" content="Testimonials from partners and leaders who worked with Zubeda Hassan Sakuru.">
     <meta name="keywords" content="Zubeda Sakuru, Simba Sports Club, CEO, Testimonials, Tanzania">
 
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com" rel="preconnect">
-    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Raleway:wght@300;400;600;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- Bootstrap CSS -->
+    <!-- Bootstrap & Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Bootstrap Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
 
     <!-- AOS Animation -->
@@ -28,22 +21,20 @@
     <style>
         :root {
             --brown: brown;
-            --dark-brown: #8b0000;
-            --light-bg: #fffdfb;
+            --tan: tan;
             --white: #fff;
             --muted: #6b5a4a;
-            --tan: tan;
         }
 
         body {
-            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-family: "Gill Sans", "Gill Sans MT", Calibri, Segoe UI, Roboto, sans-serif;
+            background-color: var(--white);
             color: var(--brown);
-            background-color: var(--light-bg);
             margin: 0;
             padding: 0;
         }
 
-        /* Header */
+        /* HEADER */
         header {
             background: var(--white);
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
@@ -53,7 +44,7 @@
             padding: 10px 0;
         }
 
-        header .logo img {
+        .logo img {
             height: 50px;
             border-radius: 30px;
         }
@@ -75,13 +66,13 @@
             border-right: 1px solid var(--brown);
             border-radius: 10px;
             padding: 10px;
-            transition: all 0.3s;
+            transition: 0.3s;
         }
 
         nav a:hover,
         nav .active {
-            color: var(--white);
             background-color: var(--brown);
+            color: var(--white);
         }
 
         .mobile-nav-toggle {
@@ -102,30 +93,26 @@
             color: var(--tan);
         }
 
-        /* Hero Section */
-        .hero {
-            position: relative;
-            height: 50vh;
-            background: var(--brown);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--white);
+        /* HERO SECTION */
+        #hero {
             text-align: center;
-            padding: 0 15px;
+            padding: 60px 20px;
+            background: var(--brown);
         }
 
-        .hero h1 {
-            font-size: 3rem;
+        #hero h1 {
+            font-size: 2.5rem;
+            color: var(--white);
             font-weight: 700;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
         }
 
-        .hero p {
-            font-size: 1.2rem;
+        #hero p {
+            font-size: 1.1rem;
+            color: var(--white);
         }
 
-        /* Testimonials Section */
+        /* TESTIMONIALS SECTION */
         .testimonial-carousel {
             max-width: 900px;
             margin: 60px auto;
@@ -150,8 +137,8 @@
         }
 
         .testimonial-slide img {
-            width: 200px;
-            height: 200px;
+            width: 300px;
+            height: 300px;
             border-radius: 50%;
             object-fit: cover;
             box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
@@ -190,20 +177,15 @@
             background: var(--tan);
         }
 
-        /* Footer */
+        /* FOOTER */
         footer {
-            background: var(--white);
             text-align: center;
             color: var(--brown);
-            padding: 25px 0;
-            margin-top: 50px;
+            padding: 25px;
+            background: var(--white);
         }
 
-        footer strong {
-            color: var(--brown);
-        }
-
-        /* Responsive */
+        /* RESPONSIVE */
         @media (max-width: 991px) {
             nav ul {
                 flex-direction: column;
@@ -214,11 +196,11 @@
                 width: 220px;
                 padding: 15px;
                 box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-                display: none;
+                display: none; /* hide menu by default */
             }
 
             nav.active ul {
-                display: flex;
+                display: flex; /* show when .active added */
             }
 
             .mobile-nav-toggle {
@@ -227,11 +209,11 @@
         }
 
         @media (max-width: 768px) {
-            .hero h1 {
+            #hero h1 {
                 font-size: 2rem;
             }
 
-            .hero p {
+            #hero p {
                 font-size: 1rem;
             }
 
@@ -246,10 +228,9 @@
 <body>
 
     <!-- Header -->
-    <header id="header" class="header d-flex align-items-center light-background sticky-top">
-        <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
-
-            <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
+    <header class="header d-flex align-items-center sticky-top">
+        <div class="container-fluid d-flex justify-content-between align-items-center">
+            <a href="index.html" class="logo d-flex align-items-center">
                 <img src="Zubby3.jpg" alt="Logo">
             </a>
 
@@ -271,16 +252,13 @@
                 <a href="#"><i class="bi bi-instagram"></i></a>
                 <a href="#"><i class="bi bi-linkedin"></i></a>
             </div>
-
         </div>
     </header>
 
     <!-- Hero -->
-    <section class="hero" data-aos="fade-down">
-        <div>
-            <h1>Voices of Trust</h1>
-            <p>Testimonials from partners, colleagues, and leaders who’ve worked closely with Zubeda Hassan Sakuru.</p>
-        </div>
+    <section id="hero" data-aos="fade-down">
+        <h1>Voices of Trust</h1>
+        <p>Testimonials from partners, colleagues, and leaders who’ve worked closely with Zubeda Hassan Sakuru.</p>
     </section>
 
     <!-- Testimonials Carousel -->
@@ -288,50 +266,28 @@
 
         <div class="testimonial-slide active">
             <img src="TRA.jpg" alt="Gen. Yusuph Juma Mwenda">
-            <p>"Hakuna ubishi kuwa michezo inakusanya watu wengi... kupitia Klabu ya Simba tutakuwa tumeongeza idadi kubwa ya walipa
-                kodi" alisema hayo kwenye hafla ya pamoja na Klabu ya Simba chini ya uongozi wa Zubeda Sakuru.</p>
+            <p>"Hakuna ubishi kuwa michezo inakusanya watu wengi... kupitia Klabu ya Simba tutakuwa tumeongeza idadi kubwa ya walipa kodi" alisema hayo kwenye hafla ya pamoja na Klabu ya Simba chini ya uongozi wa Zubeda Sakuru.</p>
             <h6>Gen. Yusuph Juma Mwenda <span style="font-weight: lighter;">Tanzania Revenue Authority (TRA) Commissioner</span></h6>
         </div>
 
         <div class="testimonial-slide">
             <img src="athuman.jpeg" alt="Mr. Athuman Nyamlani">
-            <p>"This is the kind of partnership that TFF encourages ...if managed prudently, this 20 billion Tanzanian Shillings
-                deal could pave the way for even larger sponsorships."- regarding Simba under Sakuru's leadership.</p>
+            <p>"This is the kind of partnership that TFF encourages ...if managed prudently, this 20 billion Tanzanian Shillings deal could pave the way for even larger sponsorships."</p>
             <h6>Mr. Athuman Nyamlani <span style="font-weight: lighter;">First Vice President - Tanzania Football Federation (TFF)</span></h6>
         </div>
 
-        <div class="testimonial-slide">
-            <img src="Yusuf Vadi.jpg" alt="Mr. Yusuf Vadi">
-            <p>"This partnership will revolutionize football in Tanzania and reinforce Simba's ambition to become Africa's number one club."</p>
-            <h6>Mr. Vadi Yusuf <span style="font-weight: lighter;">CEO Diadora South Africa</span></h6>
-        </div>
-
-        <div class="testimonial-slide">
-            <img src="mangungu.jpg" alt="Mr. Murtaza Mangungu">
-            <p>He called on stakeholders to unite and support the club's leadership "As leaders, we are fully committed to this path..."</p>
-            <h6>Mr. Murtaza Mangungu <span style="font-weight: lighter;">Chairman SIMBA Sports Club</span></h6>
-        </div>
-
-        <div class="testimonial-slide">
-            <img src="Msigwa.jpg" alt="Mr. Gerson Msigwa">
-            <p>"The government applauds Simba SC's CAF CC 2024/25 historic campaign... reaffirms support for growth".</p>
-            <h6>Mr. Gerson Msigwa <span style="font-weight: lighter;">Permanent Secretary Government of Tanzania</span></h6>
-        </div>
+        <!-- Add more slides here -->
 
         <div class="testimonial-controls">
-            <button class="testimonial-btn" id="prevBtn">
-                <i class="bi bi-chevron-left"></i>
-            </button>
-            <button class="testimonial-btn" id="nextBtn">
-                <i class="bi bi-chevron-right"></i>
-            </button>
+            <button class="testimonial-btn" id="prevBtn"><i class="bi bi-chevron-left"></i></button>
+            <button class="testimonial-btn" id="nextBtn"><i class="bi bi-chevron-right"></i></button>
         </div>
 
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>© 2025 <strong>Zubeda Hassan Sakuru</strong> | All Rights Reserved.</p>
+        <p>© 2025 <strong>Zubeda Hassan Sakuru</strong> | All Rights Reserved</p>
     </footer>
 
     <!-- Scripts -->
@@ -340,10 +296,13 @@
     <script>
         AOS.init({ duration: 1000, once: true });
 
-        // Mobile Nav
+        // Mobile Nav Toggle
         const navToggle = document.querySelector('.mobile-nav-toggle');
         const navMenu = document.querySelector('#navmenu');
-        navToggle.addEventListener('click', () => navMenu.classList.toggle('active'));
+
+        navToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
 
         // Testimonials Carousel
         const slides = document.querySelectorAll('.testimonial-slide');
@@ -363,13 +322,11 @@
             showSlide(currentSlide);
         });
 
-        // Auto slide every 6 seconds
         setInterval(() => {
             currentSlide = (currentSlide + 1) % slides.length;
             showSlide(currentSlide);
         }, 6000);
     </script>
-
 </body>
 
 </html>
