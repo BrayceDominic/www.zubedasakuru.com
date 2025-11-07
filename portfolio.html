@@ -199,41 +199,56 @@
             color: var(--muted);
             padding: 20px 0;
         }
-         /* Move hamburger next to social icons on mobile */
+          /* ---------- Mobile Header Adjustments ---------- */
     @media (max-width: 991px) {
         .container-fluid {
-            justify-content: space-between;
-        }
-
-        .mobile-nav-toggle {
-            order: 2; /* Place after social icons */
-            margin-left: 12px;
+            justify-content: flex-end; /* Push social + hamburger to right */
+            gap: 10px;
         }
 
         .header-social-links {
-            order: 1; /* Keep social icons first */
             display: flex;
             gap: 8px;
+            align-items: center; /* Vertically align icons */
+        }
+
+        .mobile-nav-toggle {
+            display: block;
+            font-size: 28px;
+            cursor: pointer;
+            color: var(--brown);
+            margin-left: 8px;
+            align-self: center; /* Vertically align with social icons */
         }
 
         .navmenu ul {
+            flex-direction: column;
+            position: absolute;
             top: 60px;
             right: 15px;
+            background: var(--cream);
             width: 220px;
+            padding: 15px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            display: none;
+        }
+
+        .navmenu.active ul {
+            display: flex;
         }
     }
 
-    /* Make portfolio images smaller on small screens */
+    /* ---------- Portfolio Images Smaller on Mobile ---------- */
     @media (max-width: 768px) {
         .portfolio-item img {
-            height: 250px; /* smaller to fit mobile screen */
+            height: 250px; /* fit better on phones */
         }
 
         .portfolio-grid {
             gap: 16px;
         }
     }
-    </style>
+        </style>
 </head>
 
 <body>
@@ -344,5 +359,6 @@
 
 
 </html>
+
 
 
