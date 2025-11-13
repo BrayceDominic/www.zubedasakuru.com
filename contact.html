@@ -93,57 +93,7 @@
       color: #8b0000;
     }
 
-   @media (max-width: 991px) {
-    nav ul {
-        flex-direction: column;
-        position: absolute;
-        top: 65px; /* space from header */
-        right: 20px; /* small margin from edge */
-        width: 250px; /* slightly wider for better spacing */
-        background: #fff;
-        padding: 20px 15px;
-        border-radius: 12px; /* rounded corners for cleaner look */
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-        gap: 12px; /* spacing between links */
-        display: none;
-        z-index: 1001;
-    }
-
-    nav.active ul {
-        display: flex;
-    }
-
-    nav ul li {
-        list-style: none;
-    }
-
-    nav ul li a {
-        display: flex;
-        align-items: center;
-        justify-content: flex-start; /* align icons and text nicely */
-        gap: 10px; /* spacing between icon and text */
-        padding: 10px 12px;
-        border-radius: 8px;
-        transition: all 0.3s ease;
-    }
-
-    nav ul li a:hover,
-    nav ul li a.active {
-        background: brown;
-        color: #fff;
-    }
-
-    .mobile-nav-toggle {
-        display: block;
-        font-size: 28px;
-        color: brown;
-        cursor: pointer;
-    }
-
-    .header-social-links {
-        display: none; /* hide social links on mobile for clean layout */
-    }
-}
+  @media (max-width: 991px) { nav ul { flex-direction: column; position: absolute; top: 60px; right: 15px; background: #fff; width: 220px; padding: 15px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); display: none; } nav.active ul { display: flex;} }
 
 
     /* Hero Section */
