@@ -34,62 +34,68 @@
             padding: 0;
         }
 
-        /* HEADER */
+        /* Header */
         header {
+            width: 100%;
             background: var(--white);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
             position: sticky;
             top: 0;
-            z-index: 1000;
-            padding: 10px 0;
+            z-index: 999;
         }
 
-        .logo img {
-            height: 50px;
-            border-radius: 30px;
-        }
-
-        nav ul {
-            list-style: none;
+        .navbar {
             display: flex;
-            gap: 25px;
-            margin: 0;
-            padding: 0;
+            justify-content: space-between;
             align-items: center;
+            padding: 15px 30px;
         }
 
-        nav a {
+        .navbar a {
             color: var(--brown);
             text-decoration: none;
             font-weight: 500;
-            border: 1px solid var(--brown);
-            border-radius: 10px;
-            padding: 10px;
+            margin: 0 12px;
             transition: 0.3s;
         }
 
-        nav a:hover,
-        nav .active {
-            background-color: var(--brown);
-            color: var(--white);
+        .navbar a:hover {
+            color: var(--tan);
+        }
+
+        .navmenu {
+            display: flex;
+            align-items: center;
         }
 
         .mobile-nav-toggle {
             display: none;
-            font-size: 28px;
+            font-size: 1.8rem;
             cursor: pointer;
             color: var(--brown);
         }
 
-        .header-social-links a {
-            color: var(--brown);
-            font-size: 1.2rem;
-            margin-left: 12px;
-            transition: 0.3s;
-        }
+        @media (max-width: 992px) {
+            .navmenu {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                text-align: center;
+                background: var(--white);
+                position: absolute;
+                top: 65px;
+                left: 0;
+                padding: 15px 0;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            }
 
-        .header-social-links a:hover {
-            color: var(--tan);
+            .navmenu.active {
+                display: flex;
+            }
+
+            .mobile-nav-toggle {
+                display: block;
+            }
         }
 
         /* HERO SECTION */
@@ -184,29 +190,6 @@
             background: var(--white);
         }
 
-        /* RESPONSIVE */
-        @media (max-width: 991px) {
-            nav ul {
-                flex-direction: column;
-                position: absolute;
-                top: 60px;
-                right: 15px;
-                background: var(--white);
-                width: 220px;
-                padding: 15px;
-                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-                display: none; /* hide menu by default */
-            }
-
-            nav.active ul {
-                display: flex; /* show when .active added */
-            }
-
-            .mobile-nav-toggle {
-                display: block;
-            }
-        }
-
         @media (max-width: 768px) {
             #hero h1 {
                 font-size: 2rem;
@@ -226,33 +209,21 @@
 
 <body>
 
-    <!-- Header -->
-    <header class="header d-flex align-items-center sticky-top">
-        <div class="container-fluid d-flex justify-content-between align-items-center">
-            <a href="index.html" class="logo d-flex align-items-center">
-                <img src="Zubby3.jpg" alt="Logo">
-            </a>
-
-            <nav id="navmenu" class="navmenu">
-                <ul>
-                    <li><a href="index.html"><i class="bi bi-house-door"></i> Home</a></li>
-                    <li><a href="about.html"><i class="bi bi-person-circle"></i> About</a></li>
-                    <li><a href="portfolio.html"><i class="bi bi-briefcase"></i> Portfolio</a></li>
-                    <li><a href="testimonials.html" class="active"><i class="bi bi-chat-quote"></i> Testimonials</a></li>
-                    <li><a href="blog.html"><i class="bi bi-journal-text"></i> Blog</a></li>
-                    <li><a href="contact.html"><i class="bi bi-envelope"></i> Contact</a></li>
-                </ul>
-                <i class="mobile-nav-toggle bi bi-list"></i>
-            </nav>
-
-            <div class="header-social-links">
-                <a href="#"><i class="bi bi-twitter-x"></i></a>
-                <a href="#"><i class="bi bi-facebook"></i></a>
-                <a href="#"><i class="bi bi-instagram"></i></a>
-                <a href="#"><i class="bi bi-linkedin"></i></a>
+    <!-- ======= Header ======= -->
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo"><strong>Zubeda Sakuru</strong></a>
+            <i class="mobile-nav-toggle bi bi-list"></i>
+            <div id="navmenu" class="navmenu">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="portfolio.html">Portfolio</a>
+                <a href="testimonials.html" class="active">Testimonials</a>
+                <a href="contact.html">Contact</a>
             </div>
-        </div>
+        </nav>
     </header>
+    <!-- ======= End Header ======= -->
 
     <!-- Hero -->
     <section id="hero" data-aos="fade-down">
@@ -274,8 +245,6 @@
             <p>"This is the kind of partnership that TFF encourages ...if managed prudently, this 20 billion Tanzanian Shillings deal could pave the way for even larger sponsorships."</p>
             <h6>Mr. Athuman Nyamlani <span style="font-weight: lighter;">First Vice President - Tanzania Football Federation (TFF)</span></h6>
         </div>
-
-        <!-- Add more slides here -->
 
         <div class="testimonial-controls">
             <button class="testimonial-btn" id="prevBtn"><i class="bi bi-chevron-left"></i></button>
@@ -329,4 +298,3 @@
 </body>
 
 </html>
-
