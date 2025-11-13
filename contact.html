@@ -33,93 +33,74 @@
       padding: 0;
     }
 
-    /* Header */
+    /* HEADER */
     header {
       background: var(--cream);
-      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
-      position: sticky;
-      top: 0;
-      z-index: 999;
+      padding: 15px 0;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
     }
 
     .header-container {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 15px 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
     }
 
     .logo img {
-      height: 60px;
-      border-radius: 50%;
-      margin-right: 10px;
+      height: 50px;
     }
 
-    .logo h1 {
-      display: inline-block;
-      font-size: 1.5rem;
-      color: var(--brown);
-      font-weight: 700;
-      margin: 0;
-      vertical-align: middle;
-    }
-
-    .navmenu {
+    nav.navmenu {
       display: flex;
+      gap: 25px;
       align-items: center;
-      gap: 20px;
     }
 
-    .navmenu a {
+    nav.navmenu a {
+      text-decoration: none;
       color: var(--brown);
       font-weight: 500;
-      text-decoration: none;
       transition: 0.3s;
     }
 
-    .navmenu a:hover,
-    .navmenu a.active {
+    nav.navmenu a:hover {
       color: var(--light-brown);
     }
 
-    .header-socials {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .header-socials a {
+    .header-social-links a {
       color: var(--brown);
-      font-size: 1.1rem;
+      font-size: 1.2rem;
+      margin-left: 12px;
       transition: 0.3s;
     }
 
-    .header-socials a:hover {
+    .header-social-links a:hover {
       color: var(--light-brown);
     }
 
     .mobile-nav-toggle {
       display: none;
-      font-size: 1.8rem;
-      color: var(--brown);
+      font-size: 1.5rem;
       cursor: pointer;
     }
 
     @media (max-width: 991px) {
-      .navmenu {
-        display: none;
-        flex-direction: column;
-        text-align: center;
-        background: var(--cream);
+      nav.navmenu {
         position: absolute;
-        top: 80px;
+        top: 70px;
         left: 0;
-        right: 0;
-        padding: 20px 0;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        width: 100%;
+        background: var(--cream);
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px 0;
+        display: none;
       }
 
-      .navmenu.active {
+      nav.navmenu.active {
         display: flex;
       }
 
@@ -127,7 +108,7 @@
         display: block;
       }
 
-      .header-socials {
+      .header-social-links {
         display: none;
       }
     }
@@ -151,7 +132,7 @@
       margin-bottom: 0;
     }
 
-    /* Divider */
+    /* Animated Dividers */
     .divider {
       width: 80px;
       height: 3px;
@@ -248,6 +229,17 @@
       color: var(--brown);
     }
 
+    /* Responsive */
+    @media (max-width: 768px) {
+      #hero h2 {
+        font-size: 2rem;
+      }
+
+      iframe {
+        height: 300px;
+      }
+    }
+
     iframe {
       border-radius: 15px;
       border: 0;
@@ -263,27 +255,24 @@
   <!-- Header -->
   <header>
     <div class="header-container">
-      <div class="logo d-flex align-items-center">
-        <img src="logo.jpg" alt="Logo">
-        <h1>Zubeda Sakuru</h1>
+      <div class="logo">
+        <a href="index.html"><img src="logo.png" alt="Zubeda Hassan Sakuru Logo"></a>
       </div>
-
-      <i class="mobile-nav-toggle bi bi-list"></i>
-
-      <nav class="navmenu" id="navmenu">
+      <nav class="navmenu">
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <a href="portfolio.html">Portfolio</a>
+        <a href="blog.html">Blog</a>
         <a href="testimonials.html">Testimonials</a>
-        <a href="contact.html" class="active">Contact</a>
+        <a href="contact.html">Contact</a>
       </nav>
-
-      <div class="header-socials">
+      <div class="header-social-links">
         <a href="https://x.com/ZubbySakuru" target="_blank"><i class="bi bi-twitter-x"></i></a>
         <a href="https://www.instagram.com/auntzubby" target="_blank"><i class="bi bi-instagram"></i></a>
         <a href="https://www.facebook.com/profile.php?id=61573684672741#" target="_blank"><i class="bi bi-facebook"></i></a>
         <a href="https://www.linkedin.com/in/zubeda-sakuru-4b813110a" target="_blank"><i class="bi bi-linkedin"></i></a>
       </div>
+      <div class="mobile-nav-toggle"><i class="bi bi-list"></i></div>
     </div>
   </header>
 
@@ -302,8 +291,7 @@
       <h3>Executive Office Contact</h3>
       <div class="divider"></div>
       <p>For official engagements, partnership inquiries, and professional communication.</p>
-      <p><i class="bi bi-envelope-fill me-2"></i><a href="mailto:executiveoffice@simbasc.co.tz"
-          style="color:var(--brown);text-decoration:none;">executiveoffice@simbasc.co.tz</a></p>
+      <p><i class="bi bi-envelope-fill me-2"></i><a href="mailto:executiveoffice@simbasc.co.tz" style="color:var(--brown);text-decoration:none;">executiveoffice@simbasc.co.tz</a></p>
       <p><i class="bi bi-telephone-fill me-2"></i>+255 736 000 111 (Executive Desk)</p>
       <p><i class="bi bi-geo-alt-fill me-2"></i>Simba SC Headquarters, Msimbazi Centre, Kariakoo, Dar es Salaam</p>
     </div>
@@ -360,9 +348,7 @@
     <div class="contact-card mt-5" data-aos="fade-up">
       <h4>Office Location</h4>
       <div class="divider"></div>
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.123456!2d39.265123!3d-6.816789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x185c4a2d2e12345%3A0x123456789abcdef!2sSimba%20SC%20Headquarters!5e0!3m2!1sen!2stz!4v1700000000000!5m2!1sen!2stz"
-        allowfullscreen="" loading="lazy"></iframe>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.123456!2d39.265123!3d-6.816789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x185c4a2d2e12345%3A0x123456789abcdef!2sSimba%20SC%20Headquarters!5e0!3m2!1sen!2stz!4v1700000000000!5m2!1sen!2stz" allowfullscreen="" loading="lazy"></iframe>
     </div>
 
   </section>
@@ -384,7 +370,7 @@
 
     // Mobile Navigation
     const navToggle = document.querySelector('.mobile-nav-toggle');
-    const navMenu = document.querySelector('#navmenu');
+    const navMenu = document.querySelector('.navmenu');
     navToggle.addEventListener('click', () => navMenu.classList.toggle('active'));
   </script>
 
