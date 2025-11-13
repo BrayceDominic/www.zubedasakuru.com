@@ -30,9 +30,9 @@
             padding: 0;
         }
 
-        /* Header */
-        .header {
-            background: var(--cream);
+        /* ---------------- HEADER (identical to About & Portfolio) ---------------- */
+        header {
+            background: #fff;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
             position: sticky;
             top: 0;
@@ -40,38 +40,38 @@
             padding: 10px 0;
         }
 
-        .logo img {
+        header .logo img {
             height: 50px;
             border-radius: 30px;
+            display: block;
         }
 
-        nav.navmenu {
-            position: relative;
-        }
-
-        .navmenu ul {
+        nav ul {
             list-style: none;
             display: flex;
             gap: 25px;
-            align-items: center;
             margin: 0;
-            padding: 10px;
+            padding: 0;
+            align-items: center;
         }
 
-        .navmenu a {
-            color: var(--brown);
-            border: 1px solid var(--brown);
+        nav a {
+            color: brown;
             text-decoration: none;
             font-weight: 500;
+            border: 1px solid brown;
             border-radius: 10px;
             padding: 10px;
-            transition: all 0.3s ease;
+            transition: color 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
         }
 
-        .navmenu a:hover,
-        .navmenu .active {
+        nav a:hover,
+        nav .active {
             color: white;
-            background-color: var(--brown);
+            background-color: brown;
         }
 
         .mobile-nav-toggle {
@@ -81,7 +81,40 @@
             color: var(--brown);
         }
 
-        /* Blog Layout */
+        .header-social-links a {
+            color: var(--brown);
+            font-size: 1.2rem;
+            margin-left: 12px;
+            transition: 0.3s;
+        }
+
+        .header-social-links a:hover {
+            color: #8b0000;
+        }
+
+        @media (max-width: 991px) {
+            nav ul {
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                right: 15px;
+                background: #fff;
+                width: 220px;
+                padding: 15px;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+                display: none;
+            }
+
+            nav.active ul {
+                display: flex;
+            }
+
+            .mobile-nav-toggle {
+                display: block;
+            }
+        }
+
+        /* ---------------- Blog Layout ---------------- */
         .container-blog {
             max-width: 1900px;
             margin: auto;
@@ -147,27 +180,6 @@
 
         /* Responsive */
         @media (max-width: 991px) {
-            .navmenu ul {
-                flex-direction: column;
-                position: absolute;
-                top: 60px;
-                right: 15px;
-                background: var(--cream);
-                width: 220px;
-                padding: 15px;
-                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-                display: none;
-            }
-
-            .navmenu.active ul {
-                display: flex;
-            }
-
-            .mobile-nav-toggle {
-                display: block;
-                margin-right: -10px;
-            }
-
             .grid {
                 grid-template-columns: 1fr;
             }
@@ -181,13 +193,15 @@
 
 <body>
 
-    <!-- Header -->
-    <header class="header d-flex align-items-center sticky-top">
-        <div class="container-fluid d-flex justify-content-between align-items-center">
-            <a href="index.html" class="logo d-flex align-items-center">
+    <!-- ======= Header (copied exactly) ======= -->
+    <header id="header" class="header d-flex align-items-center light-background sticky-top">
+        <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
+
+            <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
                 <img src="Zubby3.jpg" alt="Logo">
             </a>
-            <nav class="navmenu">
+
+            <nav id="navmenu" class="navmenu">
                 <ul>
                     <li><a href="index.html"><i class="bi bi-house-door"></i> Home</a></li>
                     <li><a href="about.html"><i class="bi bi-person-circle"></i> About</a></li>
@@ -198,14 +212,17 @@
                 </ul>
                 <i class="mobile-nav-toggle bi bi-list"></i>
             </nav>
+
             <div class="header-social-links">
                 <a href="#"><i class="bi bi-twitter-x"></i></a>
                 <a href="#"><i class="bi bi-facebook"></i></a>
                 <a href="#"><i class="bi bi-instagram"></i></a>
                 <a href="#"><i class="bi bi-linkedin"></i></a>
             </div>
+
         </div>
     </header>
+    <!-- ======= End Header ======= -->
 
     <!-- Hero -->
     <section class="hero">
@@ -262,7 +279,7 @@
                         <div class="thumb" style="background-image:url('Screenshot_20251024_161900_X.jpg')">
                         </div>
                         <div class="meta">Apr 22, 2025 • Dar es Salaam, Tanzania</div>
-                        <h6 style="margin:8px 0;font-weight: bold;">Announcement of voluntary tax‑payment partnership
+                        <h6 style="margin:8px 0;font-weight: bold;">Announcement of voluntary tax-payment partnership
                             between Simba SC and Tanzania Revenue Authority (TRA)</h6>
                         <p style="color:var(--muted)">“Maendeleo yoyote kwenye nchi yanatoka na ulipaji wa kodi. Leo
                             tumeungana na TRA kwa ajili ya kuhamasisha wanachi kulipa kwa hiari, na kupitia michuano hii
@@ -378,19 +395,14 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
+        // Mobile Nav Toggle (matches About/Portfolio behavior)
         const navToggle = document.querySelector('.mobile-nav-toggle');
-        const navMenu = document.querySelector('.navmenu');
-        navToggle.addEventListener('click', () => navMenu.classList.toggle('active'));
+        const navMenu = document.querySelector('#navmenu');
+        if (navToggle && navMenu) {
+            navToggle.addEventListener('click', () => navMenu.classList.toggle('active'));
+        }
     </script>
 </body>
 
 
 </html>
-
-
-
-
-
-
-
-
